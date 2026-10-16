@@ -33,9 +33,17 @@
           <span class="nav-icon"><i class="bi bi-speedometer2" aria-hidden="true"></i></span>
           <span class="nav-text">Dashboard</span>
         </a>
-        <a class="nav-link" href="users.html">
+        <a class="nav-link" href="{{ route('pelanggan.index') }}">
           <span class="nav-icon"><i class="bi bi-people" aria-hidden="true"></i></span>
-          <span class="nav-text">Users</span>
+          <span class="nav-text">Data Pelanggan</span>
+        </a>
+        <a class="nav-link" href="{{ route('ukuran.index') }}">
+          <span class="nav-icon"><i class="bi bi-rulers" aria-hidden="true"></i></span>
+          <span class="nav-text">Ukuran Pelanggan</span>
+        </a>
+        <a class="nav-link" href="{{ route('pesanan.index') }}">
+          <span class="nav-icon"><i class="bi bi-bag-check" aria-hidden="true"></i></span>
+          <span class="nav-text">Data Pesanan</span>
         </a>
         <a class="nav-link" href="add-user.html">
           <span class="nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
@@ -81,7 +89,7 @@
 
       <div class="sidebar-user">
         <img src="{{ asset('AdminAssets/images/logo.jpeg') }}" alt="Logo" width="40" height="40">
-        <strong>Admin Hasan</strong>
+        <strong>Admin bara</strong>
         <small>Active Workspace</small>
       </div>
 
@@ -132,8 +140,8 @@
 
             <div class="dropdown">
               <button class="profile-button dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                <img class="avatar-img avatar-sm" src="../assets/images/avatar/avatar.jpg" alt="Admin Hasan">
-                <span class="profile-name d-none d-sm-inline">Admin Hasan</span>
+                <img src="{{ asset('AdminAssets/images/logo.jpeg') }}" alt="Logo" width="20" height="20">
+                <span class="profile-name d-none d-sm-inline">Admin Bara</span>
               </button>
               <ul class="dropdown-menu dropdown-menu-end">
                 <li><a class="dropdown-item" href="profile.html">Profile</a></li>
