@@ -42,6 +42,10 @@
           <span class="nav-icon"><i class="bi bi-bag-check"></i></span>
           <span class="nav-text">Data Pesanan</span>
         </a>
+        <a class="nav-link {{ request()->routeIs('user.*') ? 'active' : '' }}" href="{{ route('user.index') }}">
+          <span class="nav-icon"><i class="bi bi-person-gear"></i></span>
+          <span class="nav-text">Data User</span>
+        </a>
       </nav>
 
       <div class="sidebar-user">
@@ -76,6 +80,13 @@
           @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
               {{ session('success') }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+          @endif
+
+          @if (session('error'))
+            <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+              {{ session('error') }}
               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
           @endif

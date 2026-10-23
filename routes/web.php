@@ -1,56 +1,36 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\HomeController;
-use App\Http\Controllers\MahasiswaController;
-use App\Http\Controllers\PelangganController;
-use App\Http\Controllers\QuestionController;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MatakuliahController;
+use App\Http\Controllers\QuestionController;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\GuestController;
+use App\Http\Controllers\PelangganController;
+use App\Http\Controllers\UkuranPelangganController;
+use App\Http\Controllers\PesananController;
+use App\Http\Controllers\UserController;
+
+Route::get('/matakuliah', [MatakuliahController::class, 'index']);
+
+Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
+
+//admin
+Route::get('/admin', [AdminController::class, 'index'])->name('dashboard');
+
+Route::resource('pelanggan', PelangganController::class);
+Route::resource('ukuran', UkuranPelangganController::class);
+Route::resource('pesanan', PesananController::class);
+Route::resource('user', UserController::class);
+
+//guest
+Route::get('/guest', [GuestController::class, 'index']);
 
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/pcr', function () {
-    return 'Selamat Datang di Website Kampus PCR!';
-});
-Route::get('/mahasiswa', function () {
-    return 'Halo Mahasiswa';
-})->name('mahasiswa.show');
-Route::get('/nama/{param1}', function ($param1) {
-    return 'Nama saya: '.$param1;
-});
-Route::get('/nim/{param1?}', function ($param1 = '') {
-    return 'NIM saya: '.$param1;
-});
-Route::get('/about', function () {
-    return view('halaman-about');
-});
-Route::get('/detail', function () {
-    return view('detail-mahasiswa');
-});
-Route::get('/profil', function () {
-    return view('profil-mahasiswa');
-});
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-
-route :: get('/mahasiswa/{param1}' , [MahasiswaController:: class, 'show']);
-route::get('/home' , [HomeController::class,'index']);
 
 Route::post('question/store', [QuestionController::class, 'store'])
 		->name('question.store');
-
-Route::get('question', [QuestionController::class, 'index'])
-		->name('question.index');
-
-Route::get('/dashboard', [DashboardController::class, 'index'])
-		->name('dashboard.index');
-
-Route::resource('pelanggan', PelangganController::class);
-
-Route::resource('user', UserController::class);
+        Route::get('/home', function () {
+    return view('home');
+});
