@@ -10,7 +10,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
    <!-- site metas -->
-   <title>Polk</title>
+   <title>guest</title>
    <meta name="keywords" content="">
    <meta name="description" content="">
    <meta name="author" content="">
@@ -69,7 +69,7 @@
                      <input type="text" class="form-control" placeholder="Search">
                      <span class="fa fa-search form-control-feedback"></span>
                   </div>
-                  
+
                </form>
             </div>
          </nav>
