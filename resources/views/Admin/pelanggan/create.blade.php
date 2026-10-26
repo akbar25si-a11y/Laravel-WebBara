@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('layouts.admin.app')
 @section('title', 'Tambah Pelanggan')
 @section('icon', 'bi-people')
 @section('heading', 'Tambah Pelanggan')

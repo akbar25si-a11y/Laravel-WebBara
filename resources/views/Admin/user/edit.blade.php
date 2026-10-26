@@ -1,4 +1,4 @@
-@extends('admin.layouts.app')
+@extends('layouts.admin.app')
 @section('title', 'Edit User')
 @section('icon', 'bi-person-gear')
 @section('heading', 'Edit User')
