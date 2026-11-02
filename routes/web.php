@@ -12,6 +12,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\LayananController;
 use App\Http\Controllers\KategoriLayananController;
 
+use App\Http\Controllers\AuthController;
+
 Route::get('/matakuliah', [MatakuliahController::class, 'index']);
 
 Route::get('/matakuliah/show/{kode?}', [MatakuliahController::class, 'show']);
@@ -27,11 +29,13 @@ Route::resource('layanan', LayananController::class);            // CRUD 1 (Eloq
 Route::resource('kategori', KategoriLayananController::class);  // CRUD 2 (Query Builder)
 
 //guest
-Route::get('/guest', [GuestController::class, 'index']);
+Route::get('/guest', [GuestController::class, 'index'])->name('guest.dashboard');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'home'])->name('home.guest');
+Route::get('/auth', [AuthController::class, 'showLogin'])->name('login');
+Route::post('/auth', [AuthController::class, 'login'])->name('login.process');
+Route::get('/register', [AuthController::class, 'showRegister'])->name('register');
+Route::post('/register', [AuthController::class, 'register'])->name('register.process');
 
 Route::post('question/store', [QuestionController::class, 'store'])
 		->name('question.store');
