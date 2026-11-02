@@ -226,11 +226,11 @@
    </div>
    <!-- design section end -->
    <!-- layanan section start -->
-   <div class="layanan_section layout_padding" id="layanan">
+   <div class="layanan_section layout_padding" id="layanan" style="float: left; width: 100%; padding-bottom: 60px;">
       <div class="container">
          <h1 class="design_taital">Layanan <span style="color: #343535;">Kami</span></h1>
 
-         <form method="GET" action="{{ url('/guest') }}#layanan" class="form-inline justify-content-center mb-4">
+         <form method="GET" action="{{ url('/guest') }}#layanan" onsubmit="this.querySelectorAll('input, select').forEach(function (e) { if (!e.value) e.disabled = true; });" class="form-inline justify-content-center mb-4">
             <input type="text" name="q" value="{{ request('q') }}" class="form-control mr-2 mb-2" placeholder="Cari layanan...">
             <select name="kategori" class="form-control mr-2 mb-2">
                <option value="">Semua kategori</option>
