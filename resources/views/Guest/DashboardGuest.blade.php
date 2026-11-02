@@ -225,6 +225,32 @@
       </div>
    </div>
    <!-- design section end -->
+   <!-- layanan section start -->
+   <div class="layanan_section layout_padding" id="layanan">
+      <div class="container">
+         <h1 class="design_taital">Layanan <span style="color: #343535;">Kami</span></h1>
+
+         <form method="GET" action="{{ url('/guest') }}#layanan" class="form-inline justify-content-center mb-4">
+            <input type="text" name="q" value="{{ request('q') }}" class="form-control mr-2 mb-2" placeholder="Cari layanan...">
+            <select name="kategori" class="form-control mr-2 mb-2">
+               <option value="">Semua kategori</option>
+               @foreach ($dataKategori as $k)
+                  <option value="{{ $k->slug }}" {{ request('kategori') == $k->slug ? 'selected' : '' }}>{{ $k->nama }} ({{ $k->total_layanan }})</option>
+               @endforeach
+            </select>
+            <button type="submit" class="btn btn-dark mb-2">Cari</button>
+         </form>
+
+         <div class="row">
+            @forelse ($dataLayanan as $layanan)
+               @include('guest.partials.layanan-card', ['item' => $layanan])
+            @empty
+               <div class="col-12 text-center text-muted">Belum ada layanan.</div>
+            @endforelse
+         </div>
+      </div>
+   </div>
+   <!-- layanan section end -->
    <!-- company section start -->
    <div class="company_section layout_padding">
       <div class="container">

@@ -9,6 +9,8 @@ use App\Http\Controllers\PelangganController;
 use App\Http\Controllers\UkuranPelangganController;
 use App\Http\Controllers\PesananController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\LayananController;
+use App\Http\Controllers\KategoriLayananController;
 
 Route::get('/matakuliah', [MatakuliahController::class, 'index']);
 
@@ -21,6 +23,8 @@ Route::resource('pelanggan', PelangganController::class);
 Route::resource('ukuran', UkuranPelangganController::class);
 Route::resource('pesanan', PesananController::class);
 Route::resource('user', UserController::class);
+Route::resource('layanan', LayananController::class);            // CRUD 1 (Eloquent)
+Route::resource('kategori', KategoriLayananController::class);  // CRUD 2 (Query Builder)
 
 //guest
 Route::get('/guest', [GuestController::class, 'index']);

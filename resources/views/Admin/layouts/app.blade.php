@@ -42,6 +42,14 @@
           <span class="nav-icon"><i class="bi bi-bag-check"></i></span>
           <span class="nav-text">Data Pesanan</span>
         </a>
+        <a class="nav-link {{ request()->routeIs('layanan.*') ? 'active' : '' }}" href="{{ route('layanan.index') }}">
+          <span class="nav-icon"><i class="bi bi-scissors"></i></span>
+          <span class="nav-text">Data Layanan</span>
+        </a>
+        <a class="nav-link {{ request()->routeIs('kategori.*') ? 'active' : '' }}" href="{{ route('kategori.index') }}">
+          <span class="nav-icon"><i class="bi bi-tags"></i></span>
+          <span class="nav-text">Kategori Layanan</span>
+        </a>
         <a class="nav-link {{ request()->routeIs('user.*') ? 'active' : '' }}" href="{{ route('user.index') }}">
           <span class="nav-icon"><i class="bi bi-person-gear"></i></span>
           <span class="nav-text">Data User</span>
